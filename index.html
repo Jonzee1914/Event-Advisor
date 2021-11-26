@@ -27,8 +27,8 @@
             </div>
         </div>
     </section>
-    <section class="subtitle">
-        <div class="level-center">
+    <section class="hero is-small is-primary level">
+        <div class="level-left">
             <div class="level-item mb-2 ml-2">
                 <p class="control">
                     <input class="input" type="text" placeholder="Find an event">
@@ -42,14 +42,49 @@
 
     <!-- Main Section Container-->
     <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-          <div class="tile">
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-primary">
-                <p class="title">Events</p>
-              </article>
+        <!-- Events code layout from ticketmaster -->
+        <div class="container mt-2 ml-5">
+            <div class="columns">
+                <div class="column">
+                    <div id='events-panel' class="panel is-primary">
+                        <div class="panel-heading pt-2 pb-2 is-size-2">Events</div>
+                        <div class="panel-block ">
+                            <div id="events" class="has-text-dark ">
+                            <a href="#" class="box mb-0 list-group-item is-active">
+                                <h3 class="title is-4 mb-2">Event title</h3>
+                                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="box mb-0 list-group-item">
+                                <h3 class="title is-4 mb-2">Event title</h3>
+                                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="box mb-0 list-group-item">
+                                <h3 class="title is-4 mb-2">Event title</h3>
+                                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="box mb-0 list-group-item">
+                                <h3 class="title is-4 mb-2">Event title</h3>
+                                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <p class="venue"></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-block has-background-light">
+                        <nav class="pagination is-rounded " role="navigation" aria-label="pagination">
+                        <ul class="pagination-list">
+                            <li id="prev" class="pagination-previous has-background-white"><a href="#"><span aria-hidden="true">&larr;</span></a></li>
+                            <li id="next" class="pagination-next has-background-white"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                        </nav>
+                    </div>
+                </div>
+              </div>
             </div>
-            <div class="tile is-parent">
+          </div>
+            <div class="tile is-parent is-4 mr-5">
               <article class="tile is-child notification is-info">
                 <p class="title">forecast</p>
               </article>
