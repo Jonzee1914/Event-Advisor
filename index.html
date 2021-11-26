@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="shortcut icon" type="image/png" href="./assets/images/eventAdvisor-01.png"/>
+    <title>Event Advisor</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="hero is-small is-primary">
+        <div class="hero-body pt-1 pb-2">
+            <div class="level">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="has-text-warning-light eventAdvisor">eventAdvisor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="hero is-small is-primary level">
+        <div class="level-left">
+            <div class="level-item mb-2 ml-2">
+                <p class="control">
+                    <input class="input" type="text" placeholder="Find an event">
+                </p>
+                <p class="control">
+                    <button class="button is-info">Search Event City</button>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Section Container-->
+    <div class="">
+
+        <div class="col mt-4 mr-5">
+            <div class="card currentCard pb-2 pt-2 ml-2">
+                <h5 class="card-title text-center">Current Forecast</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-4">
+                <div class="card pb-5 pl-5 fiveDayCard">
+                    <!-- Appends 5 day forecast-->
+                    <h5 class="card-header-title mr-5">5-Day Forecast </h5>
+                    <div class="row">
+                        <div class="fiveDayOne">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
+<!-- adding this as a test -->
