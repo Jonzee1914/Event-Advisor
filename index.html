@@ -27,8 +27,8 @@
             </div>
         </div>
     </section>
-    <section class="hero is-small is-primary level">
-        <div class="level-left">
+    <section class="subtitle">
+        <div class="level-center">
             <div class="level-item mb-2 ml-2">
                 <p class="control">
                     <input class="input" type="text" placeholder="Find an event">
@@ -41,26 +41,31 @@
     </section>
 
     <!-- Main Section Container-->
-    <div class="">
-        <div class="col mt-4 mr-5">
-            <div class="card currentCard pb-2 pt-2 ml-2">
-                <h5 class="card-title text-center">Current Forecast</h5>
+    <div class="tile is-ancestor">
+        <div class="tile is-vertical is-8">
+          <div class="tile">
+            <div class="tile is-parent is-vertical">
+              <article class="tile is-child notification is-primary">
+                <p class="title">Events</p>
+              </article>
             </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-info">
+                <p class="title">forecast</p>
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification">
+              <p class="title">5 Day Forecast</p>
+              <div class="content">
+                <!-- Content -->
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="row">
-            <div class="col mt-4">
-                <div class="card pb-5 pl-5 fiveDayCard">
-                    <!-- Appends 5 day forecast-->
-                    <h5 class="card-header-title mr-5">5-Day Forecast </h5>
-                    <div class="row">
-                        <div class="fiveDayOne">
-                        </div>
-                    </div>
+      </div>
 
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
