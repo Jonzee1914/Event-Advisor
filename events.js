@@ -1,8 +1,10 @@
 // code from ticketmaster to display events --Needs update to match bulma version of IDs/Classes
-var page = 0;
+// var page = 0;
 var key = "b8uIGZ1Kpi03x34hni2KAVVqshOjS6DS";
-var searchButton = $(".searchButton");
-function getEvents(page) {
+var btn = document.querySelector("#searchBtn");
+
+// Get events function
+function getEvents(page, city) {
 
   $('#events-panel').show();
   $('#attraction-panel').hide();
@@ -30,6 +32,7 @@ function getEvents(page) {
   			  console.log(err);
   		   }
   });
+  
 }
 
 function showEvents(json) {
@@ -59,18 +62,18 @@ function showEvents(json) {
   }
 }
 
-$('#prev').click(function() {
-  getEvents(--page);
-});
+// $('#prev').click(function() {
+//   getEvents(--page);
+// });
 
-$('#next').click(function() {
-  getEvents(++page);
-});
+// $('#next').click(function() {
+//   getEvents(++page);
+// });
 
 function getAttraction(id) {
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/attractions/"+id+".json?apikey=5QGCEXAsJowiCI4n1uAwMlCGAcSNAEmG",
+    url:"https://app.ticketmaster.com/discovery/v2/attractions/"+id+".json?apikey="+key,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -95,4 +98,18 @@ function showAttraction(json) {
   $('#classification').text(json.classifications[0].segment.name + " - " + json.classifications[0].genre.name + " - " + json.classifications[0].subGenre.name);
 }
 
-getEvents(page);
+// Search bar city search
+var search = function(event){
+  event.preventDefault();
+
+  //getting the value of the input
+  var inputElement = document.querySelector("#searchCity");
+  var city = inputElement.value.trim();
+  var page = 0;
+    
+  getEvents(page, city);
+  
+};
+// listener for search button click
+btn.addEventListener("click", search);
+// getEvents(page,city);
