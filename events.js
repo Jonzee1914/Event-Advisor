@@ -1,6 +1,7 @@
 // code from ticketmaster to display events --Needs update to match bulma version of IDs/Classes
 var page = 0;
-var key = b8ulGZ1Kpi03x34hni2KAVVqshOjS6DS
+var key = "b8uIGZ1Kpi03x34hni2KAVVqshOjS6DS";
+var searchButton = $(".searchButton");
 function getEvents(page) {
 
   $('#events-panel').show();
@@ -18,7 +19,7 @@ function getEvents(page) {
   
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey="+key+"&size=4&page="+page,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey="+key+"&city="+city+"&size=4&page="+page,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -37,7 +38,7 @@ function showEvents(json) {
   var events = json._embedded.events;
   var item = items.first();
   for (var i=0;i<events.length;i++) {
-    item.children('.list-group-item-heading').text(events[i].name);
+    item.children('.eventTitle').text(events[i].name);
     item.children('.list-group-item-text').text(events[i].dates.start.localDate);
     try {
       item.children('.venue').text(events[i]._embedded.venues[0].name + " in " + events[i]._embedded.venues[0].city.name);
