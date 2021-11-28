@@ -3,6 +3,16 @@
 var key = "b8uIGZ1Kpi03x34hni2KAVVqshOjS6DS";
 var btn = document.querySelector("#searchBtn");
 
+var dateElement = document.querySelector("#datePicker");
+var startDate = dateElement.value;
+//var endDate = startDate + 30day
+
+// Datepicker
+$( function() {
+  $( "#datePicker" ).datepicker();
+});
+
+
 // Get events function
 function getEvents(page, city) {
 
