@@ -1,17 +1,5 @@
 var apiKey = "6d18642e9c95b935e37fbca984ddbf75";
 var btn = document.querySelector("#searchBtn");
- 
-// loop to persist searchedCities as savedCities
-// for (var i = 0; i < localStorage.length; i++) {
-
-//     var city = localStorage.getItem(i);
-//     var searchedCities = $(".list-group");
-
-//     searchedCities.append('<button type="button" class="searchedCity btn btn-warning my-1" attr="' + city + '">' + city + "</button>");
-//     savedCities = savedCities + 1;
-// }
-// // City key count 
-// var savedCities = 0;
 
 // Saved city search function on click
 $(document).on("click", ".searchedCity", function(event) {
@@ -23,8 +11,6 @@ $(document).on("click", ".searchedCity", function(event) {
 
 // Weather data from search
 var citySearch = function(city) {
-
-    // var city = $(".cityInput").val();
 
     // Variables for current and 5 day weather
     var urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&Appid=" + apiKey + "&units=imperial";
