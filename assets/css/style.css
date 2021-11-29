@@ -1,5 +1,8 @@
 .eventAdvisor {
-    font-family: "Lobster";
+    font-family: "Lobster", sans-serif;
     color: #ffb685;
     font-size: 85px;
 }
+#attraction-panel {
+    display:none;
+  }

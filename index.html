@@ -31,43 +31,86 @@
         <div class="level-left">
             <div class="level-item mb-2 ml-2">
                 <p class="control">
-                    <input class="input" type="text" placeholder="Find an event">
+                    <input class="input" type="text" id="searchCity" placeholder="Find an event">
                 </p>
                 <p class="control">
-                    <button class="button is-info">Search Event City</button>
+                    <button id="searchBtn" class="button is-info">Search Event City</button>
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Main Section Container-->
-    <div class="">
-
-        <div class="col mt-4 mr-5">
-            <div class="card currentCard pb-2 pt-2 ml-2">
-                <h5 class="card-title text-center">Current Forecast</h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col mt-4">
-                <div class="card pb-5 pl-5 fiveDayCard">
-                    <!-- Appends 5 day forecast-->
-                    <h5 class="card-header-title mr-5">5-Day Forecast </h5>
-                    <div class="row">
-                        <div class="fiveDayOne">
+    <div class="tile is-ancestor">
+        <!-- Events code layout from ticketmaster -->
+        <div class="container mt-2 ml-5">
+            <div class="columns">
+                <div class="column">
+                    <div id='events-panel' class="panel is-primary">
+                        <div class="panel-heading pt-2 pb-2 is-size-2">Events <p class="is-size-4">Date: <input type="text" id="datePicker"></p></div>
+                        <div class="panel-block ">
+                            <div id="events" class="has-text-dark ">
+                            <a href="#" class="box mb-1 list-group-item is-active">
+                                <h3 class="title is-4 mb-2 eventTitle">Search Event City Above</h3>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="box mb-1 list-group-item is-active">
+                                <h3 class="title is-4 mb-2 eventTitle"></h3>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="box mb-1 list-group-item is-active">
+                                <h3 class="title is-4 mb-2 eventTitle"></h3>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
+                            <a href="#" class="box mb-1 list-group-item is-active">
+                                <h3 class="title is-4 mb-2 eventTitle"></h3>
+                                <p class="list-group-item-text"></p>
+                                <p class="venue"></p>
+                            </a>
                         </div>
                     </div>
-
+                    <div class="panel-block has-background-light">
+                        <nav class="pagination is-rounded " role="navigation" aria-label="pagination">
+                        <ul class="pagination-list">
+                            <li id="prev" class="pagination-previous has-background-white"><a href="#"><span aria-hidden="true">&larr;</span></a></li>
+                            <li id="next" class="pagination-next has-background-white"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+                        </ul>
+                        </nav>
+                    </div>
                 </div>
+              </div>
             </div>
         </div>
-        
-    </div>
+            <div class="tile is-parent is-4 mr-5">
+              <article class="tile is-child notification is-info">
+                <div class="title">Today's forecast for </div>
+                <div class="row border m-3 currentWeather"></div>
+                <p></p>
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification">
+              <p class="title">5 Day Forecast</p>
+              <div class="content forecastWeather">
+                <div class="row fiveDayStart"></div>
+                <!-- Content -->
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- ticketmaster script from demo site -->
+    <script src="events.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
