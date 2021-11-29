@@ -91,7 +91,7 @@ var citySearch = function(city) {
                 var fiveDayUTC1 = new Date(response.list[i].dt * 1000);
                 fiveDayUTC1 = fiveDayUTC1.toLocaleDateString("en-US");
 
-                fiveDayDiv.append("<div class='m-1 p-2 fiveDayColor'>" + "<p>" + fiveDayUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>");
+                fiveDayDiv.append("<div class='m-1 p-2 fiveDayColor has-background-info has-text-white'>" + "<p>" + fiveDayUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>");
 
 
             })
@@ -108,8 +108,9 @@ var search = function(event){
     var textInput = inputElement.value.trim();
 
     if(inputElement.value === ""){
-        alert("Weather Dashbord\n   You must enter a City");
-        return;
+        // $("<div title='UH OH!'>You need to enter a city!</div>").dialog();
+        modal.classList.add('is-active');
+        // return;
     }
     // if the value is a string 
     else{
@@ -118,5 +119,15 @@ var search = function(event){
 
     }
 };
+
+// Modal stuff
+var modalBg = document.querySelector(".modal-background");
+var modal = document.querySelector(".modal");
+
+modalBg.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+});
+
+
 // listener for search button click
 btn.addEventListener("click", search);
