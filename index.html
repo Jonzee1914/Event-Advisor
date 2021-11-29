@@ -92,7 +92,7 @@
               </article>
             </div>
           </section>
-          <div class="columns tile is-ancestor">
+          <div class="columns tile is-ancestor mt-2">
             <article class="tile is-child notification">
               <p class="title">5 Day Forecast</p>
               <div class="content forecastWeather"></div>
@@ -101,6 +101,16 @@
             </article>
           </div>
         </div>
+      </div>
+      <!-- warning modal (no city)-->
+      <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <div class="box">
+              <p><strong>UH OH!</strong><br>You need to enter a city for best results!</p>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
       </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
