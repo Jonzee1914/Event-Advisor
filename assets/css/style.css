@@ -1,8 +1,18 @@
 .eventAdvisor {
     font-family: "Lobster", sans-serif;
     color: #ffb685;
-    font-size: 85px;
+    font-size: 19vw;
+}
+@media screen and (min-width: 499px) {
+    .eventAdvisor {
+     font-size: 85px;
+  }
+}
+/* .eventAdvisor {
+    font-family: "Lobster", sans-serif;
+    color: #ffb685;
+    font-size: min(30vw, 85px);
 }
 #attraction-panel {
     display:none;
-  }
+  } */
