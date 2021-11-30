@@ -1,5 +1,5 @@
 // code from ticketmaster to display events --Needs update to match bulma version of IDs/Classes
-// var page = 0;
+var page = 2;
 var key = "b8uIGZ1Kpi03x34hni2KAVVqshOjS6DS";
 var btn = document.querySelector("#searchBtn");
 
@@ -31,7 +31,7 @@ function getEvents(page, city) {
   
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey="+key+"&city="+city+"&sort=date,asc&size=4&page="+page,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey="+key+"&city="+city+"&sort=date,asc&size=10&page="+page,
     async:true,
     dataType: "json",
     success: function(json) {
@@ -42,7 +42,14 @@ function getEvents(page, city) {
   			  console.log(err);
   		   }
   });
+  //buttons
+  $('#prev').click(function() {
+    getEvents(--page, city);
+  });
   
+  $('#next').click(function() {
+    getEvents(++page, city);
+  });
 }
 
 function showEvents(json) {
@@ -72,13 +79,7 @@ function showEvents(json) {
   }
 }
 
-// $('#prev').click(function() {
-//   getEvents(--page);
-// });
 
-// $('#next').click(function() {
-//   getEvents(++page);
-// });
 
 function getAttraction(id) {
   $.ajax({
