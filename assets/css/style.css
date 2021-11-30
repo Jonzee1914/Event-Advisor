@@ -6,13 +6,9 @@
 @media screen and (min-width: 499px) {
     .eventAdvisor {
      font-size: 85px;
+    }
 }
-
-/* .eventAdvisor {
-    font-family: "Lobster", sans-serif;
-    color: #ffb685;
-    font-size: min(30vw, 85px);
-}
-#attraction-panel {
+/* for future addition of event panel */
+/* #attraction-panel {
     display:none;
-  } */
+} */
