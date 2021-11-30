@@ -1,6 +1,6 @@
-(Server-Side APIs Challenge 6: Weather Dashboard)
-# Weather-Watcher 
-![alt text](https://github.com/Jonzee1914/Weather-Watcher/blob/main/eventadvisor-full-01.png?raw=true)
+(Group Project 1)
+# eventAdvisor 
+![alt text](https://raw.githubusercontent.com/Jonzee1914/Event-Advisor/develop/assets/images/eventadvisor-full-01.png)
 
 
 
@@ -35,7 +35,7 @@ Allow individuals looking to visit a different city a one-stop location to see e
 https://jonzee1914.github.io/Event-Advisor/
 
 ## Screen Demo
-![alt text](~~~~~~)
+![alt text](https://github.com/Jonzee1914/Event-Advisor/blob/develop/assets/images/event-advisor-demo.gif?raw=true)
 
 ## Built by
 Jonzee1914 - Erik Jones
