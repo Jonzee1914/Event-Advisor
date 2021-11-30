@@ -4,13 +4,14 @@ var key = "b8uIGZ1Kpi03x34hni2KAVVqshOjS6DS";
 var btn = document.querySelector("#searchBtn");
 
 var dateElement = document.querySelector("#datePicker");
-var startDate = dateElement.value;
+// Future datepicker elements
+// var startDate = dateElement.value;
 //var endDate = startDate + 30day
 
 // Datepicker
-$( function() {
-  $( "#datePicker" ).datepicker();
-});
+// $( function() {
+//   $( "#datePicker" ).datepicker();
+// });
 
 
 // Get events function
@@ -42,6 +43,7 @@ function getEvents(page, city) {
   			  console.log(err);
   		   }
   });
+
   //buttons
   $('#prev').click(function() {
     getEvents(--page, city);
@@ -80,34 +82,34 @@ function showEvents(json) {
 }
 
 
+//For Future release - events panel with event details
+//function getAttraction(id) {
+//   $.ajax({
+//     type:"GET",
+//     url:"https://app.ticketmaster.com/discovery/v2/attractions/"+id+".json?apikey="+key,
+//     async:true,
+//     dataType: "json",
+//     success: function(json) {
+//           showAttraction(json);
+//   		   },
+//     error: function(xhr, status, err) {
+//   			  console.log(err);
+//   		   }
+//   });
+// }
 
-function getAttraction(id) {
-  $.ajax({
-    type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/attractions/"+id+".json?apikey="+key,
-    async:true,
-    dataType: "json",
-    success: function(json) {
-          showAttraction(json);
-  		   },
-    error: function(xhr, status, err) {
-  			  console.log(err);
-  		   }
-  });
-}
-
-function showAttraction(json) {
-  $('#events-panel').hide();
-  $('#attraction-panel').show();
+// function showAttraction(json) {
+//   $('#events-panel').hide();
+//   $('#attraction-panel').show();
   
-  $('#attraction-panel').click(function() {
-    getEvents(page);
-  });
+//   $('#attraction-panel').click(function() {
+//     getEvents(page);
+//   });
   
-  $('#attraction .list-group-item-heading').first().text(json.name);
-  $('#attraction img').first().attr('src',json.images[0].url);
-  $('#classification').text(json.classifications[0].segment.name + " - " + json.classifications[0].genre.name + " - " + json.classifications[0].subGenre.name);
-}
+//   $('#attraction .list-group-item-heading').first().text(json.name);
+//   $('#attraction img').first().attr('src',json.images[0].url);
+//   $('#classification').text(json.classifications[0].segment.name + " - " + json.classifications[0].genre.name + " - " + json.classifications[0].subGenre.name);
+// }
 
 // Search bar city search
 var search = function(event){
@@ -121,6 +123,6 @@ var search = function(event){
   getEvents(page, city);
   
 };
+
 // listener for search button click
 btn.addEventListener("click", search);
-// getEvents(page,city);
