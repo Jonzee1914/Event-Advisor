@@ -32,7 +32,7 @@ function getEvents(page, city) {
   
   $.ajax({
     type:"GET",
-    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey="+key+"&city="+city+"&sort=date,asc&size=10&page="+page,
+    url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey="+key+"&city="+city+"&sort=date,asc&size=4&page="+page,
     async:true,
     dataType: "json",
     success: function(json) {
