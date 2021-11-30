@@ -30,16 +30,16 @@ var citySearch = function(city) {
 
             // Fix Date 
             var timeUTC = new Date(response.dt * 1000);
-            currentWeather.append("<h3 class='col font-weight-bold justify-content-start'>" + response.name + " " + timeUTC.toLocaleDateString("en-US") + "</h3>");
+            currentWeather.append("<h3 class='col is-size-2 justify-content-start'>" + response.name + " " + timeUTC.toLocaleDateString("en-US") + "</h3>");
             currentWeather.append(`<img class="col-2 justify-content-end" src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
             // Add Temp
             var currentTemp = currentWeather.append("<div class='col'></div>");
             currentWeather.append(currentTemp);
-            currentTemp.append("<div class='col-12'>" + "Temperature: " + response.main.temp + "° F" + "</div>");
+            currentTemp.append("<div class='col-12 is-size-4'>" + "Temperature: " + response.main.temp + "° F" + "</div>");
             // Humidity
-            currentTemp.append("<div class='col-12'>" + "Humidity: " + response.main.humidity + "%" + "</div>");
+            currentTemp.append("<div class='col-12 is-size-4'>" + "Humidity: " + response.main.humidity + "%" + "</div>");
             //Wind Speed: 
-            currentTemp.append("<div class='col-12'>" + "Wind Speed: " + response.wind.speed + "mph " + "</div>");
+            currentTemp.append("<div class='col-12 is-size-4'>" + "Wind Speed: " + response.wind.speed + "mph " + "</div>");
 
             // All the stuff for the pointless UV index...
             var uvIndex = `https://api.openweathermap.org/data/2.5/uvi?appid=b8ecb570e32c2e5042581abd004b71bb&lat=${response.coord.lat}&lon=${response.coord.lon}`;
