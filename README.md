@@ -38,8 +38,4 @@ https://jonzee1914.github.io/Event-Advisor/
 ![alt text](https://github.com/Jonzee1914/Event-Advisor/blob/develop/assets/images/event-advisor-demo.gif?raw=true)
 
 ## Built by
-Jonzee1914 - Erik Jones
-Spooncodes - Anthony Lively
-AaronPearson1 - Aaron Pearson
-varis1993 - Tavaris Thompson
-Censorius - Joshua Grant
+Jonzee1914 - Erik Jones | Spooncodes - Anthony Lively | AaronPearson1 -  Aaron Pearson | varis1993 - Tavaris Thompson | Censorius - Joshua Grant
