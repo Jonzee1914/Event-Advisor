@@ -126,3 +126,12 @@ var search = function(event){
 
 // listener for search button click
 btn.addEventListener("click", search);
+
+// City search function on click
+$(document).on("click", ".cityBtn", function(event) {
+  event.preventDefault();
+
+  var page = 0;
+  var city = $(this).attr("attr");
+  getEvents(page, city);
+});
