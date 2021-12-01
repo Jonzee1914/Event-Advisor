@@ -1,13 +1,73 @@
 var apiKey = "6d18642e9c95b935e37fbca984ddbf75";
 var btn = document.querySelector("#searchBtn");
 
-// Saved city search function on click
-$(document).on("click", ".searchedCity", function(event) {
+// get the reference to the div for the historic cities
+var containerHistoricCities = document.querySelector("#historic-Cities");
+//Array of Objects for localStores data
+var dataStore = JSON.parse(localStorage.getItem('cities')) || [];
+
+// function to clean everything is inside the container
+var cleaningElement = function(element){
+    element.innerHTML = "";
+};
+
+
+// City search function on click
+$(document).on("click", ".cityBtn", function(event) {
     event.preventDefault();
 
     var city = $(this).attr("attr");
     citySearch(city);
 });
+
+// function to retreive the information from localStore
+var loadCity = function(){
+
+    cleaningElement(containerHistoricCities);
+
+        if(dataStore){
+            // creating a unordered list to store the info
+            var ulElement = document.createElement("ul");
+            ulElement.classList.add("list-unstyled");
+            ulElement.classList.add("w-100");
+            
+            //for loop to iterate through out the localStore
+            for(var i = 0; i < dataStore.length; i++){
+                
+                var liElement = document.createElement("li");
+                // append a button with bootstraps classes inside each item
+                liElement.innerHTML = "<button type='button' class='cityBtn button is-info is-light my-1' attr='"+dataStore[i]+"'>" + dataStore[i] + "</button>";
+                // append the item into its container
+                ulElement.appendChild(liElement);
+                }
+
+                containerHistoricCities.appendChild(ulElement); 
+            }
+};
+
+// Store the city in localStore
+var saveCity = function(city){
+
+    var flag = false
+    if(dataStore){
+        for(var i = 0; i < dataStore.length; i++){
+            if(dataStore[i] === city){
+                flag = true;
+            }
+        }
+        if(flag){
+            console.log("The City: "+city+" already exists");
+            
+        }
+    }
+    if(!flag){
+        dataStore.push(city);
+        localStorage.setItem("cities",JSON.stringify(dataStore));
+    }
+    
+    loadCity();
+}
+
 
 // Weather data from search
 var citySearch = function(city) {
@@ -98,7 +158,10 @@ var citySearch = function(city) {
 
         });
     }
+
+    saveCity(city);
 };
+
 // Search bar city search
 var search = function(event){
     event.preventDefault();
@@ -120,6 +183,16 @@ var search = function(event){
     }
 };
 
+//listener or call function when is clicked on button on each city history using Jquery
+$(document).on("click", ".list-group-item", function(event) {
+
+    event.preventDefault();
+
+    //getting the attribute that contain the name of the city
+    var city = $(this).attr("attr");
+    callApiFetch(city);
+});
+
 // Modal stuff
 var modalBg = document.querySelector(".modal-background");
 var modal = document.querySelector(".modal");
@@ -131,3 +204,4 @@ modalBg.addEventListener('click', () => {
 
 // listener for search button click
 btn.addEventListener("click", search);
+loadCity();
