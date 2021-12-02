@@ -35,7 +35,7 @@ Allow individuals looking to visit a different city a one-stop location to see e
 https://jonzee1914.github.io/Event-Advisor/
 
 ## Screen Demo
-![alt text](https://github.com/Jonzee1914/Event-Advisor/blob/develop/assets/images/event-advisor-demo.gif?raw=true)
+![alt text](https://github.com/Jonzee1914/Event-Advisor/blob/main/assets/images/event-advisor-demo.gif?raw=true)
 
 ## Built by
 Jonzee1914 - Erik Jones | Spooncodes - Anthony Lively | AaronPearson1 -  Aaron Pearson | varis1993 - Tavaris Thompson | Censorius - Joshua Grant
